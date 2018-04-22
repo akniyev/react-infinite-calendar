@@ -32,6 +32,7 @@ export default class Month extends PureComponent {
     let day = 0;
     let isDisabled = false;
     let isEvent = false;
+    let eventsCount = 0;
     let isToday = false;
     let date, days, dow, row;
 
@@ -60,8 +61,12 @@ export default class Month extends PureComponent {
 				);
 
         isEvent = (
-					events && events.length && events.indexOf(date) !== -1
+					events && events.length && events.map(x => x.date).indexOf(date) !== -1
 				);
+
+        eventsCount = (
+            (events.find(x => x.date === date) || {count: 0}).count
+        );
 
         days[k] = (
 					<DayComponent
@@ -72,6 +77,7 @@ export default class Month extends PureComponent {
             selected={selected}
 						isDisabled={isDisabled}
 						isEvent={isEvent}
+                        eventCount={eventsCount}
 						isToday={isToday}
 						locale={locale}
             month={month}

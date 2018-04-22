@@ -5,7 +5,13 @@ import '../../styles.css';
 import './demo.css';
 
 render(
-  <InfiniteCalendar
-    width={Math.min(window.innerWidth, 400)}
-  />
+    <div>
+        <InfiniteCalendar
+          events={[
+              { date: new Date(2018, 3, 26), count: 3},
+              { date: new Date(2018, 3, 24), count: 4},
+          ]}
+          width={Math.min(window.innerWidth, 600)}
+        />
+    </div>
 , document.querySelector('#demo'));

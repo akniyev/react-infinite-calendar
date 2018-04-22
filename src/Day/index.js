@@ -37,6 +37,7 @@ export default class Day extends PureComponent {
           {isToday ? todayLabel.short || todayLabel.long : monthShort}
         </span>
         <span className={styles.day}>{day}</span>
+        {this.props.isEvent && <span className="badge badge-light">[{this.props.eventCount}]</span>}
       </div>
     );
   }
@@ -49,7 +50,7 @@ export default class Day extends PureComponent {
       day,
       handlers,
       isDisabled,
-      isEvent,
+      isEvent, eventCount,
       isHighlighted,
       isToday,
       isSelected,
@@ -87,6 +88,7 @@ export default class Day extends PureComponent {
       >
         {day === 1 && <span className={styles.month}>{monthShort}</span>}
         {isToday || isEvent ? <span>{day}</span> : day}
+        {isEvent && <span className="badge">[{eventCount}]</span>}
         {day === 1 &&
           currentYear !== year &&
           <span className={styles.year}>{year}</span>}

@@ -73,7 +73,7 @@ export default class Calendar extends Component {
   		showWeekdays: PropTypes.bool,
       todayHelperRowOffset: PropTypes.number,
     }),
-    events: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+    events: PropTypes.arrayOf(PropTypes.object),
     height: PropTypes.number,
     keyboardSupport: PropTypes.bool,
     locale: PropTypes.shape({
@@ -163,7 +163,7 @@ export default class Calendar extends Component {
     return disabledDates && disabledDates.map((date) => format(parse(date), 'YYYY-MM-DD'));
   }
   getEvents(events) {
-    return events && events.map((date) => format(parse(date), 'YYYY-MM-DD'));
+    return events && events.map(x => ({ date: format(parse(x.date), 'YYYY-MM-DD'), count: x.count }));
   }
   _displayOptions = {};
   getDisplayOptions(displayOptions = this.props.displayOptions) {

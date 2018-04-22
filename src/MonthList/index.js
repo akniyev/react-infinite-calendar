@@ -20,7 +20,7 @@ export default class MonthList extends Component {
   static propTypes = {
     disabledDates: PropTypes.arrayOf(PropTypes.string),
     disabledDays: PropTypes.arrayOf(PropTypes.number),
-    events: PropTypes.arrayOf(PropTypes.string),
+    events: PropTypes.arrayOf(PropTypes.object),
     height: PropTypes.number,
     isScrolling: PropTypes.bool,
     locale: PropTypes.object,
