@@ -195,7 +195,7 @@
     .Cal__Header__root.Cal__Header__landscape .Cal__Header__dateWrapper.Cal__Header__day {
       flex-grow: 1;
       height: 76px; }
-
+ 
 .Cal__Header__wrapper {
   display: flex;
   flex-direction: column;

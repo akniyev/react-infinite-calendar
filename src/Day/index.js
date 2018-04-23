@@ -89,6 +89,7 @@ export default class Day extends PureComponent {
         {day === 1 && <span className={styles.month}>{monthShort}</span>}
         {isToday || isEvent ? <span>{day}</span> : day}
         {isEvent && <span className="badge">[{eventCount}]</span>}
+          <span>1</span>
         {day === 1 &&
           currentYear !== year &&
           <span className={styles.year}>{year}</span>}
